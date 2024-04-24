@@ -1,11 +1,15 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import RootNavigation from './src/navigations/RootNavigation';
+import {GestureHandlerRootView} from 'react-native-gesture-handler';
+import {Provider} from 'react-redux';
+import store from './src/redux/store';
 
 export default function App() {
   return (
-    <View>
-      <RootNavigation />
-    </View>
+    <Provider store={store}>
+      <GestureHandlerRootView style={{flex: 1}}>
+        <RootNavigation />
+      </GestureHandlerRootView>
+    </Provider>
   );
 }
